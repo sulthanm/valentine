@@ -16,12 +16,12 @@
 
     .card {
       background: white;
-      padding: 30px 40px;
+      padding: 80px 40px;
       border-radius: 20px;
       text-align: center;
       box-shadow: 0 10px 30px rgba(0,0,0,0.2);
       position: relative;
-      width: 500px; /* increased width for more space */
+      width: 500px;
     }
 
     .card img {
@@ -52,9 +52,9 @@
       font-weight: bold;
     }
 
-    /* YES button with heart image and beating */
+    /* YES button */
     #yesBtn {
-      left: 35%; /* moved more to the left */
+      left: 35%;
       transform: translateX(-50%);
       background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/250px-Heart_coraz%C3%B3n.svg.png') no-repeat center center;
       background-size: 60px 60px;
@@ -78,7 +78,7 @@
 
     /* NO button */
     #noBtn {
-      left: 65%; /* moved more to the right */
+      left: 65%;
       transform: translateX(-50%);
       background: #adb5bd;
     }
@@ -95,42 +95,67 @@
     .celebrate img {
       width: 200px;
     }
+
+    /* 🎁 Gift button */
+    .gift-btn {
+      margin-top: 20px;
+      padding: 12px 20px;
+      background: #ff4d6d;
+      color: white;
+      border-radius: 30px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .gift-btn:hover {
+      background: #e63b5f;
+      transform: scale(1.05);
+    }
+
+    .gift-note {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #555;
+    }
   </style>
 </head>
 <body>
 
   <div class="card" id="questionCard">
-    <!-- Panda image -->
     <img src="https://images-cdn.ubuy.co.in/64842674cc528f65f5348d1e-love-hugs-panda-bear-bubu-dudu.jpg" alt="Cute Panda" />
 
     <h1>Sana 💖<br>Will you be my Valentine?</h1>
 
     <div class="buttons">
-      <!-- YES heart -->
       <button id="yesBtn">YES</button>
-      <!-- NO button -->
       <button id="noBtn">No 🙈</button>
     </div>
 
-    <div>
-    No seems a bit shy..
+    <div>No seems a bit shy..</div>
   </div>
-  </div>
-
 
   <div class="card celebrate" id="celebrateCard">
     <h2>YAAAY!!! 🎉💖🥰</h2>
     <img src="https://media1.tenor.com/m/yaNqkG8o9UcAAAAd/hhgf.gif" alt="Celebration GIF">
     <h2>I Knew It, I Love You .... !!! 💃🕺✨</h2>
+
+    <!-- 🎁 Gift Button -->
+    <button class="gift-btn" id="giftBtn">
+      🎁 Here is your Valentine Gift
+    </button>
+
   </div>
 
   <script>
     const noBtn = document.getElementById("noBtn");
     const yesBtn = document.getElementById("yesBtn");
+    const giftBtn = document.getElementById("giftBtn");
     const questionCard = document.getElementById("questionCard");
     const celebrateCard = document.getElementById("celebrateCard");
 
-    // NO button playful movement
+    // NO button movement
     noBtn.addEventListener("mouseover", () => {
       const x = Math.random() * 200 - 100;
       const y = Math.random() * 100 - 50;
@@ -141,6 +166,13 @@
     yesBtn.addEventListener("click", () => {
       questionCard.style.display = "none";
       celebrateCard.style.display = "block";
+    });
+
+    // 🎁 Gift click (replace link later)
+    giftBtn.addEventListener("click", () => {
+      alert("Your Valentine gift link will open here 💖");
+      // Later replace with:
+      window.open("https://www.savana.com/details/asymmetric-co-ord-set-2102292", "_blank");
     });
   </script>
 
