@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>For Sana .. 💖</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+
+    .card {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      position: relative;
+      width: 500px; /* increased width for more space */
+    }
+
+    .card img {
+      width: 150px;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      color: #ff4d6d;
+      margin-bottom: 25px;
+    }
+
+    .buttons {
+      margin-top: 20px;
+      position: relative;
+      height: 80px;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.2s ease;
+      position: absolute;
+      color: white;
+      font-weight: bold;
+    }
+
+    /* YES button with heart image and beating */
+    #yesBtn {
+      left: 35%; /* moved more to the left */
+      transform: translateX(-50%);
+      background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/250px-Heart_coraz%C3%B3n.svg.png') no-repeat center center;
+      background-size: 60px 60px;
+      width: 60px;
+      height: 60px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      text-shadow: 0 0 2px #000;
+      animation: beat 1s infinite;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: translateX(-50%) scale(1); }
+      25% { transform: translateX(-50%) scale(1.1); }
+      50% { transform: translateX(-50%) scale(1); }
+      75% { transform: translateX(-50%) scale(1.12); }
+    }
+
+    /* NO button */
+    #noBtn {
+      left: 65%; /* moved more to the right */
+      transform: translateX(-50%);
+      background: #adb5bd;
+    }
+
+    .celebrate {
+      display: none;
+    }
+
+    .celebrate h2 {
+      color: #ff4d6d;
+      margin-bottom: 15px;
+    }
+
+    .celebrate img {
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card" id="questionCard">
+    <!-- Panda image -->
+    <img src="https://images-cdn.ubuy.co.in/64842674cc528f65f5348d1e-love-hugs-panda-bear-bubu-dudu.jpg" alt="Cute Panda" />
+
+    <h1>Sana 💖<br>Will you be my Valentine?</h1>
+
+    <div class="buttons">
+      <!-- YES heart -->
+      <button id="yesBtn">YES</button>
+      <!-- NO button -->
+      <button id="noBtn">No 🙈</button>
+    </div>
+
+    <div>
+    No seems a bit shy..
+  </div>
+  </div>
+
+
+  <div class="card celebrate" id="celebrateCard">
+    <h2>YAAAY!!! 🎉💖🥰</h2>
+    <img src="https://media1.tenor.com/m/yaNqkG8o9UcAAAAd/hhgf.gif" alt="Celebration GIF">
+    <h2>I Knew It, I Love You .... !!! 💃🕺✨</h2>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+    const questionCard = document.getElementById("questionCard");
+    const celebrateCard = document.getElementById("celebrateCard");
+
+    // NO button playful movement
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * 200 - 100;
+      const y = Math.random() * 100 - 50;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    });
+
+    // YES click
+    yesBtn.addEventListener("click", () => {
+      questionCard.style.display = "none";
+      celebrateCard.style.display = "block";
+    });
+  </script>
+
+</body>
+</html>
